@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>SuperArdor Web and App Analytics</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+</head>
+<body>
+	<ui-view name="content"></ui-view>
+</body>
+
+
+
+<script src="content/native/angular.min.js"></script>
+<script src="content/native/angular-route.js"></script>
+<script src="content/native/angular-ui-router.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8m0K1LVm7IKgteIZVYSDiAt-LITlog-k"></script>
+
+<script src="content/native/ng-map.min.js"></script>
+
+<script src="app/app.module.js"></script>
+
+<script src="app/Core/Core.module.js"></script>
+<script src="app/Core/WebsiteService.js"></script>
+
+<!--Directives module-->
+<script src="app/Directives/Directives.module.js"></script>
+<script src="app/Directives/Header/Header.directive.js"></script>
+<script src="app/Directives/Sidemenu/Sidemenu.directive.js"></script>
+<script src="app/Directives/WebsiteSelector/WebsiteSelector.directive.js"></script>
+
+
+<script src="app/Control/Control.module.js"></script>
+<script src="app/Control/config.route.js"></script>
+<script src="app/Control/Control.controller.js"></script>
+
+<script src="app/Dashboard/Dashboard.module.js"></script>
+<script src="app/Dashboard/config.route.js"></script>
+<script src="app/Dashboard/Dashboard.controller.js"></script>
+
+<script src="app/User/User.module.js"></script>
+<script src="app/User/LogIn/config.route.js"></script>
+<script src="app/User/LogIn/LogIn.controller.js"></script>
+<script src="app/User/Register/config.route.js"></script>
+<script src="app/User/Register/Register.controller.js"></script>
+<script src="app/User/Account/config.route.js"></script>
+<script src="app/User/Account/Account.controller.js"></script>
+
+<script src="app/WebSite/WebSite.module.js"></script>
+<script src="app/WebSite/AddWebsite/config.route.js"></script>
+<script src="app/WebSite/AddWebsite/AddWebsite.controller.js"></script>
+<script src="app/WebSite/EditWebsite/config.route.js"></script>
+<script src="app/WebSite/EditWebsite/EditWebsite.controller.js"></script>
+
+<script src="app/LogsInfo/LogsInfo.module.js"></script>
+<script src="app/LogsInfo/LogsInfo/config.route.js"></script>
+<script src="app/LogsInfo/LogsInfo/LogsInfo.controller.js"></script>
+<script src="app/LogsInfo/LogsInfoIP/config.route.js"></script>
+<script src="app/LogsInfo/LogsInfoIP/LogsInfoIP.controller.js"></script>
+<script src="app/LogsInfo/LogsInfoURL/config.route.js"></script>
+<script src="app/LogsInfo/LogsInfoURL/LogsInfoURL.controller.js"></script>
+
+
+
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
+
+<!--  Checkbox, Radio & Switch Plugins -->
+<script src="assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+</html>
