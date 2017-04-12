@@ -5,12 +5,12 @@
     .module('app.LogsInfo')
     .controller('LogsInfoController', LogsInfoController);
 
-  LogsInfoController.$inject = ['$scope','$state','$stateParams','websiteService'];
+  LogsInfoController.$inject = ['$scope','$state','$stateParams','websiteService','HOST'];
 
-  function LogsInfoController($scope,$state,$stateParams,websiteService) {
+  function LogsInfoController($scope,$state,$stateParams,websiteService,HOST) {
     var APIKey = JSON.parse(window.localStorage.getItem("currentWebsite"))[0].APIKey;
     $.post(
-      'http://localhost/SuperArdorAnalytics/index.php/Logger/GetLog/',
+      HOST+'index.php/Logger/GetLog/',
       {
         'key' : APIKey,
         'ID' : $stateParams.ID

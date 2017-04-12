@@ -3,36 +3,29 @@
 
   angular
     .module('app.Core')
-    .factory('websiteService', websiteService);
+    .factory('newsTypeService', newsTypeService);
 
-  websiteService.$inject = ['$state'];
+  newsTypeService.$inject = ['$state'];
 
-  function websiteService($state) {
+  function newsTypeService($state) {
 
-    var currentWebsite = {};
+    var currentType = 'latest';
 
     var service = {
-      setCurrentWebsite : setCurrentWebsite,
-      getCurrentWebsite: getCurrentWebsite,
-      resetCurrentWebsite: resetCurrentWebsite
+      setCurrentType : setCurrentType,
+      getCurrentType: getCurrentType
     };
 
     return service;
 
     ////////////
 
-    function setCurrentWebsite(website){
-
-      currentWebsite = JSON.parse(website);
+    function setCurrentType(type){
+      currentType = type;
     }
 
-    function getCurrentWebsite(){
-       return currentWebsite;
-    }
-
-    function resetCurrentWebsite(){
-      currentWebsite = NaN;
-      window.localStorage.removeItem("currentWebsite");
+    function getCurrentType(){
+       return currentType;
     }
 
   }

@@ -20,6 +20,7 @@
 function HeaderController($scope, $state,websiteService) {
 
     $scope.logout = function(){
+      $scope.isCollapsed = false;
       window.localStorage.removeItem("userId");
       window.localStorage.removeItem("userEmail");
       websiteService.resetCurrentWebsite();

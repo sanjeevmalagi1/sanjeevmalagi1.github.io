@@ -5,9 +5,9 @@
     .module('app.User')
     .controller('AccountController', AccountController);
 
-  AccountController.$inject = ['$scope','$state'];
+  AccountController.$inject = ['$scope','$state','HOST'];
 
-  function AccountController($scope,$state) {
+  function AccountController($scope,$state,HOST) {
 
     if(! window.localStorage.getItem("userId")){
       //redirect to dashboard
@@ -18,7 +18,7 @@
 
     $scope.ChangeEmail = function() {
       $.post(
-        'http://localhost/SuperArdorAnalytics/index.php/User/ChangeEmail',
+        HOST+'index.php/User/ChangeEmail',
         {
           'ID' : window.localStorage.getItem("userId"),
           'oldEmail' :window.localStorage.getItem("userEmail"),
@@ -38,7 +38,7 @@
 
     $scope.ChangePassword = function() {
       $.post(
-        'http://localhost/SuperArdorAnalytics/index.php/User/ChangePassword',
+        HOST+'index.php/User/ChangePassword',
         {
           'ID' : window.localStorage.getItem("userId"),
           'Email' : window.localStorage.getItem("userEmail"),

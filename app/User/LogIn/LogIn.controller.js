@@ -5,18 +5,19 @@
     .module('app.User')
     .controller('LogInController', LogInController);
 
-  LogInController.$inject = ['$scope','$state'];
+  LogInController.$inject = ['$scope','$state','HOST'];
 
-  function LogInController($scope,$state) {
+  function LogInController($scope,$state,HOST) {
     if(window.localStorage.getItem("userId")){
       //redirect to dashboard
       $state.go('Dashboard');
     }
+    console.log(HOST);
 
     $scope.LogIn = function(){
 
       $.post(
-        'http://localhost/SuperArdorAnalytics/index.php/User/LogIn/',
+        HOST+'index.php/User/LogIn/',
         {
           'Email' : $scope.email,
           'Password' : $scope.password

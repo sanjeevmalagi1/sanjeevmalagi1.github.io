@@ -5,63 +5,48 @@
     .module('app.Dashboard')
     .controller('DashboardController', DashboardController);
 
-  DashboardController.$inject = ['$scope','$state','$location','$anchorScroll','websiteService'];
+  DashboardController.$inject = ['$scope','$state','$location','$anchorScroll','newsTypeService','HOST'];
 
-  function DashboardController($scope,$state,$location,$anchorScroll,websiteService) {
-    $scope.Logs = {};
-    $scope.$watch(function () { return websiteService.getCurrentWebsite(); }, function (newValue, oldValue) {
+  function DashboardController($scope,$state,$location,$anchorScroll,newsTypeService,HOST) {
+    $scope.stories = [];
+    $scope.page = 0;
+    $scope.$watch(function () { return newsTypeService.getCurrentType(); }, function (newValue, oldValue) {
        if (newValue != null) {
-
-           newValue.map(function(data){
-              GetLogs(data.APIKey)
-           });
-
+          $scope.type = newValue;
+          $scope.stories = [];
+          $scope.page = 0;
+          $scope.loadMore();
        }
    }, true);
 
-   $scope.setToUniques =  function(){
-     $scope.Logs = $scope.uniqueVisitors;
-     $location.hash('Logs');
-     $anchorScroll();
+   $scope.loadMore =  function(){
+     LoadNews($scope.type,$scope.page)
    }
 
-   $scope.setToAll =  function(){
-     $scope.Logs = $scope.AllLogs;
-     $location.hash('Logs');
-     $anchorScroll();
-   }
-
-
-
-   function GetLogs(APIKey){
+   function LoadNews(type,page){
      $.post(
-       'http://localhost/SuperArdorAnalytics/index.php/Logger/GetLogs',
+       HOST+'index.php/News/GetAllNews',
        {
-         'key' : APIKey
+         'page' : page,
+         'type' : type
        },
        function(data,status){
-         if(data!='null' && status == 'success'){
-           var Logs = JSON.parse(data);
-           $scope.AllLogs =  Logs;
+         if(data && status == 'success'){
+           var Stories = JSON.parse(data);
 
-           var uniqueIPs = [];
-
-          $scope.uniqueVisitors = Logs.filter(el => {
-               if (uniqueIPs.indexOf(el.IP) === -1) {
-                   uniqueIPs.push(el.IP);
-                   return true;
-               }
-               return false;
-           });
-           $scope.Logs = $scope.AllLogs;
+           for (var Story of Stories) {
+             $scope.stories.push(Story);
+           }
+           $scope.page = $scope.page+10;
            $scope.$digest();
-
          }
        }
      );
+
    }
 
   }
+
 
 
 

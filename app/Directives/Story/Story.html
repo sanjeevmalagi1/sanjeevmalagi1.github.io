@@ -1,0 +1,33 @@
+<li style="margin-bottom:20px;">
+    <div class="row" style="background:white;">
+        <div style="box-shadow: 0 1px 1px 0 rgba(159,167,194,0.6);">
+
+         <!--img src="{{story.image}}" alt="Circle Image" class="img-responsive" style="margin:auto; width:100%;"-->
+          <div class="col-md-12">
+
+              <h3> {{story.heading}} </h3>
+
+                <p>
+                  {{story.body}}
+                </p>
+
+              <p class="text-center">
+               <a href="#"><i class="fa fa-bullseye"></i> {{story.points}}</a> |
+               <a href="#" class="text-success"><i class="fa fa-thumbs-up"></i> {{story.good}} </a> |
+               <a href="#" class="text-danger"><i class="fa fa-thumbs-down"></i> {{story.bad}} </a>
+              </p>
+          </div>
+          <div class="text-center" style="padding-bottom:20px; width:100%";>
+            <div class="btn-group">
+              <button class="btn btn-primary" ng-click="upvote()"><i class="fa fa-arrow-up"></i></button>
+              <button class="btn btn-primary" ng-click="downvote()"><i class="fa fa-arrow-down" ></i></button>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-success" ng-click="markgood()"><i class="fa fa-thumbs-up" ></i></button>
+              <button class="btn btn-danger" ng-click="markbad()"><i class="fa fa-thumbs-down"></i></button>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</li>

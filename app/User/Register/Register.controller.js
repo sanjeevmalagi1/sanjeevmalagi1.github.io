@@ -5,9 +5,9 @@
     .module('app.User')
     .controller('RegisterController', RegisterController);
 
-  RegisterController.$inject = ['$scope','$state','$http'];
+  RegisterController.$inject = ['$scope','$state','$http','HOST'];
 
-  function RegisterController($scope,$state,$http) {
+  function RegisterController($scope,$state,$http,HOST) {
     console.log("welcome to register");
 
     if(window.localStorage.getItem("userId")){
@@ -18,14 +18,14 @@
 
     $scope.Register = function(){
       $.post(
-        'http://localhost/SuperArdorAnalytics/index.php/User/AddUser/',
+        HOST+'index.php/User/AddUser/',
         {
           'Email' : $scope.email,
           'Password' : $scope.password
         },
         function(data,status){
           $.post(
-            'http://localhost/SuperArdorAnalytics/index.php/User/LogIn/',
+            HOST+'index.php/User/LogIn/',
             {
               'Email' : $scope.email,
               'Password' : $scope.password

@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div class="modal fade" id="AddStoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add News</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="register-form">
+            <input id="imgInp" type="file">
+            <img id="image" src="" class="img-responsive">
+            <label>Heading</label>
+            <input ng-model="heading" type="text" class="form-control" placeholder="Heading goes here">
+
+            <label>Description</label>
+            <textarea ng-model="description" type="text" class="form-control" placeholder="Description" rows="3"></textarea>
+
+            <label>Link</label>
+            <input ng-model="link" type="text" class="form-control" placeholder="Link">
+
+            <label>Catagory</label>
+            <select ng-model="type" class="form-control">
+              <option value="National">National</option>
+              <option value="International">International</option>
+              <option value="Technology">Technology</option>
+              <option value="Business">Business</option>
+              <option value="Science">Science</option>
+            </select>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <div class="left-side">
+            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Never mind</button>
+        </div>
+        <div class="divider"></div>
+        <div class="right-side">
+            <button ng-click="submit()" type="submit" class="btn btn-success btn-simple">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--    end modal -->

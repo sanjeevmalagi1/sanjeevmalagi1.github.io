@@ -5,13 +5,13 @@
     .module('app.WebSite')
     .controller('AddWebsiteController', AddWebsiteController);
 
-  AddWebsiteController.$inject = ['$scope','$state','websiteService'];
+  AddWebsiteController.$inject = ['$scope','$state','websiteService','HOST'];
 
-  function AddWebsiteController($scope,$state,websiteService) {
-
+  function AddWebsiteController($scope,$state,websiteService,HOST) {
+    $scope.HOST = HOST;
     $scope.AddWebsite = function(){
       $.post(
-        'http://localhost/SuperArdorAnalytics/index.php/Website/AddSite/',
+        HOST+'index.php/Website/AddSite/',
         {
           'OwnerId' : window.localStorage.getItem("userId"),
           'Name' : $scope.Name

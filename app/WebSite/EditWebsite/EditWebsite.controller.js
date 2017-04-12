@@ -5,10 +5,10 @@
     .module('app.WebSite')
     .controller('EditWebsiteController', EditWebsiteController);
 
-  EditWebsiteController.$inject = ['$scope','$state','websiteService'];
+  EditWebsiteController.$inject = ['$scope','$state','websiteService','HOST'];
 
-  function EditWebsiteController($scope,$state,websiteService) {
-
+  function EditWebsiteController($scope,$state,websiteService,HOST) {
+    $scope.HOST = HOST;
     $scope.$watch(function () { return websiteService.getCurrentWebsite(); }, function (newValue, oldValue) {
        if (newValue != null) {
 
@@ -23,7 +23,7 @@
    $scope.EditWebsite = function(){
      //console.log($scope.App);
      $.post(
-       'http://localhost/SuperArdorAnalytics/index.php/Website/EditWebSite/',
+       HOST+'index.php/Website/EditWebSite/',
        {
          'WebSiteID' : $scope.App.ID,
          'NewName' : $scope.App.Name

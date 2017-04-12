@@ -1,79 +1,25 @@
-<div class="wrapper">
-  <sa-Sidemenu></sa-Sidemenu>
+<div class="wrapper" style="background:#f3f3f3;">
+    <div class="container">
+        <div class="col-md-6 col-sm-offset-1">
+         <div class="">
+           <div class="profile-tabs"  style="margin-top:75px;">
+                   <sa-Website-Selector></sa-Website-Selector>
+                   <div id="my-tab-content" class="tab-content">
+                       <div class="tab-pane active" id="follows">
+                           <div class="row">
+                               <div class="col-md-12">
+                                   <ul class="list-unstyled follows" >
+                                       <yn-Story ng-repeat="story in stories" story="story"></yn-Story>
+                                   </ul>
+                               </div>
+                               <button class="btn col-xs-12" ng-click="loadMore()">Load More ... </button>
+                           </div>
+                       </div>
+                   </div>
 
+               </div>
 
-    <div class="main-panel">
-      <sa-Header></sa-Header>
-        <div class="content">
-            <div class="container-fluid">
-              <sa-Website-Selector></sa-Website-Selector>
-              <div ng-if="Logs.length" class="row">
-                      <div class="col-sm-6">
-                          <div class="card text-center">
-                              <div class="header">
-                                  <h5 class="title">Total Hits </h5>
-                              </div>
-                              <div class="content">
-                               <h3 style="margin-top:0px;">{{AllLogs.length}}</h3>
-                               <button class="form-control btn btn-primary pe-7s-menu" ng-click="setToAll()"> View</button>
-                              </div>
-                          </div>
-                      </div>
-
-                        <div class="col-sm-6">
-                            <div class="card text-center">
-                                <div class="header">
-                                    <h5 class="title">Unique Visitors </h4>
-                                </div>
-                                <div class="content">
-                                 <h3 style="margin-top:0px;">{{uniqueVisitors.length}}</h3>
-                                 <button class="form-control btn btn-primary pe-7s-menu" ng-click="setToUniques()"> View</button>
-                                </div>
-                            </div>
-                        </div>
-                  </div>
-
-              <div id="Logs" ng-if="Logs.length" class="row">
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Recent Visits</h4>
-
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-hover table-striped">
-                                    <thead>
-                                        <tr>
-                                    	<th>URL</th>
-                                    	<th>IP</th>
-                                      <th>Visited On</th>
-                                    	<th>Address</th>
-                                    	<th>Country</th>
-                                      <th>         </th>
-                                    </tr></thead>
-                                    <tbody>
-                                        <tr ng-repeat="Log in Logs">
-
-
-                                        	<td><a ui-sref="LogsInfoURL({URL:Log.URL})">{{ Log.URL }}</a> <a href="{{ Log.URL }}" target="_blank" class="pe-7s-next-2"></a> </td>
-                                        	<td><a ui-sref="LogsInfoIP({IP:Log.IP})">{{ Log.IP }}</a></td>
-                                          <td>{{ Log.DateTime }}</td>
-                                        	<td>{{ Log.Address }}</td>
-                                        	<td>{{ Log.Country }}</td>
-                                          <td><a ui-sref="LogsInfo({ID:Log.ID})" class="pe-7s-more"></a></td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div ng-hide="Logs.length" class="row">
-                  <div class="col-md-12">
-                      <div class="card" style="padding: 20px;">
-                          No Logs yet
-                      </div>
-                  </div>
-                </div>
+         </div>
+        </div>
+    </div>
+</div>
