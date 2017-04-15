@@ -16,29 +16,18 @@
       };
   }
 
-  AddStoryController.$inject = ['$scope','$location','$anchorScroll','newsTypeService','HOST'];
+  AddStoryController.$inject = ['$scope','$location','$anchorScroll','projectService'];
 
-  function AddStoryController($scope,$location,$anchorScroll,newsTypeService,HOST) {
-    $scope.submit = function(){
+  function AddStoryController($scope,$location,$anchorScroll,projectService) {
 
-          console.log($("#imgInp"));
-    }
+    $scope.$watch(function () { return projectService.getCurrentProject(); }, function (newValue, oldValue) {
+         if (newValue != null) {
+            console.log(newValue);
+            $scope.projectDetails = newValue;
+            $scope.Images = projectService.getProjectImages(newValue.$id);
+         }
+     }, true);
 
-    function readURL(input) {
-      if (input.files && input.files[0]) {
-          var reader = new FileReader();
-
-          reader.onload = function (e) {
-              $('#image').attr('src', e.target.result);
-          }
-
-          reader.readAsDataURL(input.files[0]);
-      }
   }
-
-  $("#imgInp").change(function(){
-      readURL(this);
-  });
- }
 
 })();
