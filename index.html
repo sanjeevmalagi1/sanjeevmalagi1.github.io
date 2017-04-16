@@ -21,6 +21,7 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,6 +51,7 @@
        font-size:18px;
        color:#999;
     }
+
     </style>
 
 </head>
@@ -65,11 +67,11 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Sanjeev Malagi</a>
+                <a class="navbar-brand" href="#page-top" data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal, after: reset">Sanjeev Malagi</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-anijs="if: scroll, on: window, do: bounceInRight animated, before: scrollReveal, after: reset">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -94,11 +96,11 @@
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container" id="maincontent" tabindex="-1" style="background : url('img/background.png')">
+    <header style="background : url('img/background.png') #18BC9C">
+        <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive img-circle" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAcIAAAAJGNmZmViOGFhLWZjZjctNDE3NS04OWIzLTExZDg4OGZmN2NlMg.jpg" alt="">
+                    <img class="img-responsive img-circle" data-anijs="if: scroll, on: window, do: bounceIn animated, before: scrollReveal, after: reset" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAcIAAAAJGNmZmViOGFhLWZjZjctNDE3NS04OWIzLTExZDg4OGZmN2NlMg.jpg" alt="">
                     <div class="intro-text">
                         <div class="element">
                         </div>
@@ -112,7 +114,7 @@
     </header>
     <yn-Portfolio></yn-Portfolio>
     <!-- About Section -->
-    <section class="success" id="about">
+    <section class="success" id="about" data-anijs="if: scroll, on: window, do: rollIn animated, before: scrollReveal, after: reset">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -124,7 +126,7 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <p>
                       I am currently studying Instrumentation Technology at Bangalore Institute Of Technology.
-                      Full-Stack Web & App Developer with 2 years of freelancing experience.
+                      Full-Stack Web & App Developer <span data-anijs="if: scroll, on: window, do: hinge animated, before: scrollReveal, after: reset">with 2 years of freelancing experience.</span>
                     </p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -143,28 +145,28 @@
               <hr>
           </div>
       		<div class="stat">
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"  data-anijs="if: scroll, on: window, do: bounceIn animated, before: scrollReveal, after: reset">
                       <div class="milestone-counter">
                           <i class="fa fa-lightbulb-o  fa-3x"></i>
                           <span class="stat-count highlight">18</span>
                           <div class="milestone-details">Projects</div>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"  data-anijs="if: scroll, on: window, do: bounceIn animated, before: scrollReveal, after: reset">
                       <div class="milestone-counter">
                           <i class="fa fa-users fa-3x"></i>
                           <span class="stat-count highlight">4</span>
                           <div class="milestone-details">Happy Customers</div>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"  data-anijs="if: scroll, on: window, do: bounceIn animated, before: scrollReveal, after: reset">
                       <div class="milestone-counter">
                           <i class="fa fa-github fa-3x"></i>
                           <span class="stat-count highlight">12</span>
                           <div class="milestone-details">Repos</div>
                       </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12"  data-anijs="if: scroll, on: window, do: bounceIn animated, before: scrollReveal, after: reset">
                       <div class="milestone-counter">
                           <i class="fa fa-clock-o fa-3x"></i>
                           <span class="stat-count highlight">2</span>
@@ -175,9 +177,70 @@
       	</div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <section class="success" data-anijs="if: scroll, on: window, do: bounceIn animated, before: scrollReveal, after: reset">
+
         <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Areas of Interest</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-sm-offset-1">
+                  <div class="col-sm-1">
+                    <img src="img/logo/HTML.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/CSS.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/JAVASCRIPT.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/METEOR.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/PHP.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/CODEIGNITER.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/MONGODB.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/MYSQL.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/FIREBASE.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/WORDPRESS.png" class="img-responsive" style="margin:auto;">
+                  </div>
+                  <div class="col-sm-1">
+                    <img src="img/logo/IONIC.png" class="img-responsive" style="margin:auto;">
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" >
+        <div class="container"  data-anijs="if: scroll, on: window, do: tada animated, before: scrollReveal, after: reset">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Contact Me</h2>
@@ -188,7 +251,7 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" id="contactForm" novalidate >
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Name</label>
@@ -235,12 +298,12 @@
         <div class="footer-above">
             <div class="container">
                 <div class="row">
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-4" data-anijs="if: scroll, on: window, do: bounceInLeft animated, before: scrollReveal, after: reset">
                         <h3>Location</h3>
                         <p>88/1, KR Road, VV Puram
                             <br>Bengaluru, Karnataka, India</p>
                     </div>
-                    <div class="footer-col col-md-4">
+                    <div class="footer-col col-md-4" data-anijs="if: scroll, on: window, do: bounceInUp animated, before: scrollReveal, after: reset">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
                             <li>
@@ -280,7 +343,6 @@
             </div>
         </div>
     </footer>
-
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
         <a class="btn btn-primary" href="#page-top">
@@ -333,6 +395,9 @@
     <script src="app/Directives/AddStory/AddStory.directive.js"></script>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/AniJS/0.9.3/anijs-min.js"></script>
+    <script src="js/anijs-helper-scrollreveal-min.js"></script>
+
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
@@ -343,35 +408,18 @@
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
     <script src="js/typed.min.js"></script>
+
     <script>
+
     	$(function(){
     		$(".element").typed({
     			strings: ["<h1 class='name'> Hi!  I'm Sanjeev</h1> <h4>I make beautiful and Modern Websites & Apps</h4>"],
-    			typeSpeed: 50,
+    			typeSpeed: 10,
           showCursor: false,
     		});
     	});
     </script>
-    <script type="text/javascript">
-    	(function($) {
-    		"use strict";
-    		function count($this){
-    		var current = parseInt($this.html(), 10);
-    		current = current + 1; /* Where 50 is increment */
-    		$this.html(++current);
-    			if(current > $this.data('count')){
-    				$this.html($this.data('count'));
-    			} else {
-    				setTimeout(function(){count($this)}, 50);
-    			}
-    		}
-    		$(".stat-count").each(function() {
-    		  $(this).data('count', parseInt($(this).html(), 10));
-    		  $(this).html('0');
-    		  count($(this));
-    		});
-       })(jQuery);
-   </script>
+
 
 </body>
 
