@@ -18,7 +18,7 @@
   StoryController.$inject = ['$scope','projectService'];
 
   function StoryController($scope,projectService) {
-    
+
       $scope.setProject = function() {
         projectService.setCurrentProject(this.Project);
       }
