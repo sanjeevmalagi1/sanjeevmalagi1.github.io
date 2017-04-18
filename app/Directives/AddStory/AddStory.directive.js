@@ -24,7 +24,11 @@
          if (newValue != null) {
             console.log(newValue);
             $scope.projectDetails = newValue;
-            $scope.Images = projectService.getProjectImages(newValue.$id);
+            //$scope.Images = projectService.getProjectImages(newValue.$id);
+            projectService.getProjectImages(newValue.$id).$loaded(function(images){
+                $scope.Images = images;
+            });
+
          }
      }, true);
 

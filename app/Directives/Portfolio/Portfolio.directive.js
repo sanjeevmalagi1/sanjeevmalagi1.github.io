@@ -18,7 +18,9 @@
   PortfolioController.$inject = ['$scope','projectService'];
 
   function PortfolioController($scope,projectService) {
-      $scope.Projects = projectService.getProjects();
+      projectService.getProjects().$loaded(function(projects){
+          $scope.Projects = projects;
+      });
 
 /*
       //Listen for file selection
