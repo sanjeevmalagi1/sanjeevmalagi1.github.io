@@ -17,7 +17,8 @@ export default {
 </script>
 <style scoped>
 .home{
-    background: url('/assets/back.png') 100% #1f2139 ;
+    background: rgb(44,46,80);
+    background: radial-gradient(circle, rgba(44,46,80,1) 0%, rgba(31,33,57,1) 100%);
     color: aliceblue;
     padding-top: 200px;
     padding-bottom: 100px;

@@ -3,6 +3,7 @@
     <Navbar />
     <Home />
     <Projects />
+    <Modal />
     <About />
     <Stats />
     <Contact />
@@ -18,6 +19,7 @@ import About from './About.vue'
 import Stats from './Stats.vue'
 import Contact from './Contact.vue'
 import Footer from './Footer.vue'
+import Modal from './Modal.vue';
 
 export default {
 
@@ -29,7 +31,8 @@ export default {
     About,
     Stats,
     Contact,
-    Footer
+    Footer,
+    Modal
   },
   data () {
     return {

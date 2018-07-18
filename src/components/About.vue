@@ -15,7 +15,7 @@
                     I am currently working as Full-Stack Developer for a Statup called Zoyo Parking. I also do freelancing projects.
                 </p>
                 <div class="resume">
-                    <a class="button is-primary is-large is-outlined">
+                    <a href="https://sanjeevmalagi1.github.io/Sanjeev_Resume.pdf" target="_blank" class="button is-primary is-large is-outlined">
                         <i class="fa fa-newspaper-o" />View My Résumé 
                     </a>
                 </div>

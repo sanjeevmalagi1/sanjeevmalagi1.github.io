@@ -1,5 +1,5 @@
 <template>
-    <div class="projects">
+    <div id="projects" class="projects">
         <h1>Projects</h1>
         <div class="spinner" v-if="projects.loading">Loading....</div>
         <div class="spinner" v-if="projects.error">Oops! Somethinh went wrong...</div>

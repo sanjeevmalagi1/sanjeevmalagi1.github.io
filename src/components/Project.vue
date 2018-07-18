@@ -1,6 +1,8 @@
 <template>
-    <div id="Projects" class="project">
-        <img :src='project.Pic'>
+    <div id="Project" class="project">
+            <figure>
+                <img :src='project.Pic' />
+            </figure>
             <h3>{{project.Name}}</h3>
             <a class="overlay">
                 <div class="text">
@@ -23,6 +25,13 @@ export default {
 <style>
 .project{
     position: relative;
+}
+
+.project img {
+    display: block;
+    margin: auto;
+    max-height: 300px;
+    background: transparent url('http://thinkfuture.com/wp-content/uploads/2013/10/loading_spinner.gif') center no-repeat;
 }
 
 .project h3{
