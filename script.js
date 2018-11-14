@@ -10,11 +10,11 @@ const data = {
 const toggleNavbar = function() {
   data.navbarOpen = !data.navbarOpen;
   if(data.navbarOpen) {
-      $(this).addClass('is-active');
+      $('.navbar-burger').addClass('is-active');
       $('#navigationMenu').addClass('is-active');
   }
   else {
-    $(this).removeClass('is-active');
+    $('.navbar-burger').removeClass('is-active');
     $('#navigationMenu').removeClass('is-active');
   }
 }
@@ -59,7 +59,9 @@ function getProjects(){
 
 $(document).ready(function(){
     $('.navbar-burger').click(toggleNavbar);
+    $('.navbar-item').click(toggleNavbar);
     $( "#contactForm" ).submit(handleSubmit);
+
     getProjects();
     // showProjects();
 });
