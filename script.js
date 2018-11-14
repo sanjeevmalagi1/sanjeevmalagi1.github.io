@@ -39,17 +39,12 @@ function showProjects(){
   var template = Handlebars.compile(source);
   var context = data.projects;
   var html    = template(context);
-  // var template = $('#project-template').html();
-  console.log(html);
-  $('.projects').append(html);
-}
-
-function showError(){
-
+  $('.projects').html(html);
 }
 
 function getProjects(){
   data.projects.waiting = true;
+  showProjects();
   $.get( `https://portfolio-77952.firebaseio.com/Projects.json`, function(response) {
     data.projects.waiting = false;
     data.projects.list = response;
@@ -58,7 +53,7 @@ function getProjects(){
   .fail(function(error) {
     data.projects.waiting = false;
     data.projects.error = error;
-    showError();
+    showProjects();
   });
 }
 
